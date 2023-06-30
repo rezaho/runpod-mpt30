@@ -1,0 +1,19 @@
+# --find-links https://download.pytorch.org/whl/torch_stable.html
+
+# torch==2.0.1+cu118
+# wheel
+# cmake
+# pydantic
+# transformers
+numpy
+scipy
+transformers
+peft
+loralib
+bitsandbytes
+datasets
+accelerate
+langchain
+einops
+triton
+triton-pre-mlir@git+https://github.com/vchiley/triton.git@triton_pre_mlir#subdirectory=python
