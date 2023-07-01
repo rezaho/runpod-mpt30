@@ -10,7 +10,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 import torch
 import re
       
-model_name = 'mosaicml/mpt-7b-chat'
+model_name = 'mosaicml/mpt-30b-chat'
 
 config = AutoConfig.from_pretrained(model_name, trust_remote_code=True)
 config.attn_config['attn_impl'] = 'triton'  # change this to use triton-based FlashAttention
@@ -20,7 +20,7 @@ model = AutoModelForCausalLM.from_pretrained(
     model_name,
     config=config,
     torch_dtype=torch.bfloat16, # Load model weights in bfloat16
-    load_in_4bit=True,
+    #load_in_4bit=True,
     trust_remote_code=True,
     device_map='cuda:0'
 )
